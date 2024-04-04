@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Coding Challenge 6
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                background-color: lightseagreen;
+            }
+           
+        </style>
+    </head>
+    <body>
+        <h1> Quadratic Formula </h1>
+
+        <button onclick="solve()">Find the root</button>
+
+        <h4 id="result"></h4>
+
+        <script>
+            function solve(){
+                var a=prompt("Input a value for variable a:");
+                var b=prompt("Input a value for variable b:");
+                var c=prompt("Input a value for variable c:");
+
+                var discriminant=Math.pow(b,2)-(4*a*c);
+
+                if(discriminant==0){
+                    var outPut=((-1*b)+Math.sqrt(Math.pow(b,2)-(4*a*c)))/(2*a) ||((-1*b)-Math.sqrt(Math.pow(b)-(4*a*c)))/(2*a);
+                    document.getElementById("result").innerHTML=ouPut;  
+                }
+                else if(discriminant<0){
+                    document.getElementById("result").innerHTML="imaginary";
+                }
+                else if(discriminant>0){
+                    var outPut1=((-1*b)+Math.sqrt(Math.pow(b,2)-(4*a*c)))/(2*a);
+                    var outPut2=((-1*b)-Math.sqrt(Math.pow(b,2)-(4*a*c)))/(2*a);
+                    document.getElementById("result").innerHTML="The first root is " +outPut1+" & the second root is " + outPut2+".";   
+                }
+            }
+        </script>
+    </body>
+</html>
